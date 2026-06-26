@@ -12,7 +12,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
   ],
   imports: [
     BrowserModule,
-    HttpClientModule // Importante para las peticiones HTTP
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
