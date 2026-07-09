@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pokeapi": {
+    "PokemonApi": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pokeapi",
+            "outputPath": "dist/pokemon-api",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pokeapi:build:production"
+              "buildTarget": "PokemonApi:build:production"
             },
             "development": {
-              "buildTarget": "pokeapi:build:development"
+              "buildTarget": "PokemonApi:build:development"
             }
           },
           "defaultConfiguration": "development"
