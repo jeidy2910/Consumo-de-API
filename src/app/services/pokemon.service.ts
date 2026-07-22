@@ -17,15 +17,14 @@ export class PokemonService {
     return this.http.get<PokemonListResponse>(`${this.apiUrl}?limit=${limit}&offset=${offset}`)
       .pipe(
         switchMap((response: PokemonListResponse) => {
-          // Crear array de observables para obtener el detalle de cada Pokémon
           const detailRequests = response.results.map((pokemon) => 
             this.http.get<Pokemon>(pokemon.url)
           );
-          // Ejecutar todas las peticiones en paralelo
+
           return forkJoin(detailRequests);
         }),
         map((pokemons: Pokemon[]) => {
-          // Ordenar por ID
+
           return pokemons.sort((a, b) => a.id - b.id);
         }),
         catchError((error) => {
